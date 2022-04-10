@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * main - entry point 
+ * main - entry point
  *
- * Description: Print lower and upper alphabet on the same line 
+ * Description: print lower and upper alphabet on the same line 
  * Return: 0
  */
 int main(void)
