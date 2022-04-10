@@ -3,7 +3,7 @@
 /**
  * main - entry point
  *
- * Description: print numbers 0 to 9 on one line
+ * Description: Print numbers 0 to 9 on one line
  * Return: 0
  */
 int main(void)
