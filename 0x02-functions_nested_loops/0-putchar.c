@@ -1,21 +1,29 @@
 #include "main.h"
 /**
- * main - entry block
- * @void: no argument
- * Return: 0
- **/
+ * main-main block
+ * Description:print -putchar in a new line
+ * Return:this program returns zero
+ */
 int main(void)
 {
-	char ermias[] = "_putchar";
-
-	int C;
-
-	for (C = 0; C < 8; C++)
-	{
-		_putchar(ermias[C]);
-	}
-	_putchar('\n');
-	return (0);
+_putchar('_');
+_putchar('p');
+_putchar('u');
+_putchar('t');
+_putchar('c');
+_putchar('h');
+_putchar('a');
+_putchar('r');
+_putchar('\n');
+return (0);
 }
+
+
+
+
+
+
+
+
 
 
