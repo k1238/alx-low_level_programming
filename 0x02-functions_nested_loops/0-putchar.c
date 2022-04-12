@@ -6,13 +6,13 @@
  **/
 int main(void)
 {
-	char kaleb[] = "_putchar";
+	char ermias[] = "_putchar";
 
-	int c;
+	int C;
 
-	for (c = 0; c < 8; c++)
+	for (C = 0; C < 8; C++)
 	{
-		_putchar(kaleb[c]);
+		_putchar(ermias[C]);
 	}
 	_putchar('\n');
 	return (0);
