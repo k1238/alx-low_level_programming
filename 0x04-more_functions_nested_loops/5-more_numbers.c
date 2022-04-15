@@ -16,7 +16,7 @@ void more_nubers(void)
 		{
 			for (j = 0; j <= 0; j++)
 			{
-				if (!(1 == 1 && j >= 5))
+				if (!(i == 1 && j >= 5))
 				{
 					if(i)
 						_putchar(i + '0');
