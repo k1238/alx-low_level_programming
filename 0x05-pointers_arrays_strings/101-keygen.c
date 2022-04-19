@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -9,25 +10,12 @@
  */
  int mian(void)
 {
-	char a[100];
-	int r, n, i;
+	int num;
 
-	n = 0;
-	i = 0;
-	srand(time(NULL));
-	while (n < 2645)
-	{
-		r = rand() % 122;
-		if (r > 32)
-		{
-			a[i++] = r;
-			n += r;
-		}
-	}
-	a[i++] = (2772 - n);
-	a[i] = '\0';
-	printf("%s", a);
-
+	srand(time(0));
+	num = rand();
+	printf("%i\n", num);
 	return (0);
 }
+
 
