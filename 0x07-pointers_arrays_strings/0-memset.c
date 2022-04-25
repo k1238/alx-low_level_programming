@@ -1,15 +1,11 @@
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    char buffer[98] = {0x00};
+int main () {
+   char str[50];
 
-    simple_print_buffer(buffer, 98);
-    _memset(buffer, 0x01, 95);
-    printf("-------------------------------------------------\n");
-    simple_print_buffer(buffer, 98);    
-    return (0);
+   strcpy(str,"This is string.h library function");
+   puts(str);
+
+   memset(str,'$',7);
+   puts(str);
+   
+   return(0);
 }
