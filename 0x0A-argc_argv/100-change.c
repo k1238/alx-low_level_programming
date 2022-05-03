@@ -11,7 +11,7 @@
  * Return: Always 0 (success)
  */
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int cents, coins_number = 0;
 
@@ -25,7 +25,7 @@ int main (int argc, char *argv[])
 		cents = atoi(argv[1]);
 		while (cents > 0)
 		{
-			if (cents >= 25)
+			if (cents > 25)
 				cents -= 25;
 			else if (cents >= 10)
 				cents -= 10;
@@ -34,7 +34,7 @@ int main (int argc, char *argv[])
 			else if (cents >= 2)
 				cents -= 2;
 			else if (cents >= 1)
-				cents -= 1;
+				cents += 1;
 			coins_number += 1;
 		}
 	}
