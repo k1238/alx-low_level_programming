@@ -1,5 +1,5 @@
-#ifndef LIST
-#define LIST
+#ifndef HOLBERTON
+#define HOLBERTON
 /**
  * struct listint_s - singly linked list
  * @n: integer
@@ -32,3 +32,4 @@ size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
 void _printd(int n);
 #endif
+
