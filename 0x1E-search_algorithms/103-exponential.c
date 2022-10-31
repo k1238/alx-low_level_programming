@@ -23,36 +23,33 @@ void print_array(int *array, size_t first, size_t last)
 }
 
 /**
- * binary_rec - searches for a value in an array of integers recursively
+ * ex_binary_search - searches for a value in an array of integers
  *
  * @array: a pointer to the first element of the array to search in
- * @first: the minimum index of the array
- * @last: the maximum index of the array
+ * @size: the number of elements in array
  * @value: the value to search for
+ * @start: the first index to look inside
  *
  * Return: the index where value is located or -1 on failure or not found
  */
 
-int binary_rec(int *array, size_t first, size_t last, int value)
+int ex_binary_search(int *array, size_t size, int value, size_t start)
 {
-	size_t i = 0;
+	size_t i = 0, first = start, last = size - 1;
 
 	if (array)
 	{
-		if (first <= last)
+		while (first <= last)
 		{
 			print_array(array, first, last);
-			i = (first + last) / 2;
+			i = (first + last) / 2; /* Gets the middle value */
 
-			if (array[first] == value)
-				return (first);
-
-			if (value == array[i] && array[i - 1] != value)
+			if (value > array[i]) /* Uses the right part of array */
+				first = i + 1;
+			else if (value < array[i]) /* Uses the left part of array */
+				last = i - 1;
+			else
 				return (i);
-			if (value > array[i])
-				return (binary_rec(array, i + 1, last, value));
-			if (value <= array[i])
-				return (binary_rec(array, first, i, value));
 		}
 	}
 
@@ -60,7 +57,7 @@ int binary_rec(int *array, size_t first, size_t last, int value)
 }
 
 /**
- * advanced_binary - searches for a value in an array of integers
+ * exponential_search - searches for a value in an array of integers
  *
  * @array: a pointer to the first element of the array to search in
  * @size: the number of elements in array
@@ -69,10 +66,22 @@ int binary_rec(int *array, size_t first, size_t last, int value)
  * Return: the index where value is located or -1 on failure or not found
  */
 
-int advanced_binary(int *array, size_t size, int value)
+int exponential_search(int *array, size_t size, int value)
 {
+	size_t i = 1;
+
 	if (array)
-		return (binary_rec(array, 0, size - 1, value));
+	{
+		while (i < size && array[i] < value)
+		{
+			printf("Value checked array[%lu] = [%d]\n", i, array[i]);
+			i *= 2;
+		}
+
+		i = i > size - 1 ? size : i + 1;
+		printf("Value found between indexes [%lu] and [%lu]\n", i / 2, i - 1);
+		return (ex_binary_search(array, i, value, i / 2));
+	}
 
 	return (-1);
 }
